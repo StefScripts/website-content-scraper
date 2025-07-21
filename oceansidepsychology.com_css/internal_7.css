@@ -1,0 +1,23 @@
+
+/* CSS Styles to keep image height fixed to container until tablet break point. Give your image a class called .diviwp-image-height-100 and column 1 .diviwp-col-flex */
+  
+/* MEDIA QUERIES */
+
+  /* Everything above tablet break-point  */
+@media only screen and ( min-width: 980px ) {
+	
+  /* this is the column that holds the image modue */
+  .et-db #et-boc .et-l .diviwp-col-flex {
+    display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+  }
+	.et-db #et-boc .et-l .diviwp-image-height-100 img {
+		height:100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+	}
+  
+}

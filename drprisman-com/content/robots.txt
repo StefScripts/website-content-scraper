@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive directories and files
+Disallow: /includes/
+Disallow: /config.php
+Disallow: /functions.php
+Disallow: /.htaccess
+
+# Allow access to assets
+Allow: /assets/
+
+# Sitemap location (when available)
+# Sitemap: https://drprisman.com/sitemap.xml
