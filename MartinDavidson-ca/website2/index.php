@@ -1,9 +1,11 @@
+<?php include __DIR__ . '/inc/header.php'; ?>
 <?php include __DIR__ . '/inc/nav.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Home | Martin Davidson</title>
  <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -63,10 +65,13 @@
  <h2>Ready to Talk?</h2>
  <p>I offer a free, no‑pressure 15‑minute phone consultation so you can ask
   questions and see whether we’re the right fit.<br>
-  <strong>Call</strong> XXX‑XXX‑XXXX or <strong>email</strong> [link]. I look forward to meeting you.
+  <strong>Call</strong> <a href="tel:17783898876">(778) 389-8876</a>.
  </p>
+ <p>Best,</p>
+ <p>Martin</p>
 
  <?php include __DIR__ . '/inc/footer.php'; ?>
+ <script src="/js/navigation.js"></script>
 </body>
 
 </html>

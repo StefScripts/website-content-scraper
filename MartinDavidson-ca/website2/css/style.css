@@ -21,36 +21,158 @@ header {
   font-weight: 500;
   font-size: 26px;
   line-height: 23px;
-  padding: 14px 20px;
+  padding: 35px 20px;
+  text-align: center;
+  letter-spacing: .25rem;
+  position: relative;
+  z-index: 1001;
 }
 
 /* --- Navigation --- */
-nav ul {
+.main-nav {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-menu {
   list-style: none;
   margin: 0;
-  padding: 6px 0 0;
+  padding: 0;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  height: 60px;
 }
-nav a {
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
   font-family: "Maven Pro", sans-serif;
   font-weight: 500;
-  font-size: 17px;
-  line-height: 27px;
-  color: rgb(13, 8, 8);
+  font-size: 16px;
+  color: rgb(34, 34, 34);
   text-decoration: none;
+  padding: 10px 16px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease;
 }
-nav a.active,
-nav a:hover {
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: rgb(123, 170, 183);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
   color: rgb(123, 170, 183);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: rgb(34, 34, 34);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: calc(100vh - 60px);
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    overflow-y: auto;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  /* Hamburger Animation */
+  .nav-toggle.active .nav-toggle-bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .nav-toggle.active .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .nav-toggle-bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 /* --- Sub-headings --- */
 h2 {
   margin-top: 40px;
   margin-bottom: 10px;
-  font-family: "Gentium Basic", serif;
-  font-weight: 700;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
   font-size: 21px;
   line-height: 19px;
   color: rgb(13, 8, 8);
