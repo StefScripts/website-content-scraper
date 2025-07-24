@@ -1,0 +1,96 @@
+/* --- Google-font import (weights listed in guide) --- */
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Gentium+Basic:wght@700&display=swap");
+
+/* --- Base document styles (body) --- */
+body {
+  margin: 0;
+  padding: 0 20px;
+  background: rgb(252, 252, 250);
+  color: rgb(34, 34, 34);
+  font-family: "Gentium Basic", Georgia, serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* --- Header bar --- */
+header {
+  background: rgb(123, 170, 183);
+  color: rgb(255, 255, 255);
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 23px;
+  padding: 14px 20px;
+}
+
+/* --- Navigation --- */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 0;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  color: rgb(13, 8, 8);
+  text-decoration: none;
+}
+nav a.active,
+nav a:hover {
+  color: rgb(123, 170, 183);
+}
+
+/* --- Sub-headings --- */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-family: "Gentium Basic", serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 19px;
+  color: rgb(13, 8, 8);
+}
+
+/* --- Image on the page --- */
+.main-image {
+  width: 400px;
+  height: 266px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+
+/* --- Hero section on the home page --- */
+.hero {
+  display: flex;          /* image left, intro text right */
+  flex-wrap: wrap;        /* stacks on narrow screens */
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.hero img {
+  width: 248px;
+  height: 398px;
+  object-fit: cover;
+}
+
+.hero .intro-text {
+  flex: 1 1 260px;        /* allow it to shrink on small widths */
+}
+
+/* --- Simple footer --- */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  color: rgb(13, 8, 8);
+}
