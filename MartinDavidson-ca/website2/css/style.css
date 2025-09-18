@@ -1,0 +1,218 @@
+/* --- Google-font import (weights listed in guide) --- */
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Gentium+Basic:wght@700&display=swap");
+
+/* --- Base document styles (body) --- */
+body {
+  margin: 0;
+  padding: 0 20px;
+  background: rgb(252, 252, 250);
+  color: rgb(34, 34, 34);
+  font-family: "Gentium Basic", Georgia, serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* --- Header bar --- */
+header {
+  background: rgb(123, 170, 183);
+  color: rgb(255, 255, 255);
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 23px;
+  padding: 35px 20px;
+  text-align: center;
+  letter-spacing: .25rem;
+  position: relative;
+  z-index: 1001;
+}
+
+/* --- Navigation --- */
+.main-nav {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  text-decoration: none;
+  padding: 10px 16px;
+  display: block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: rgb(123, 170, 183);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: rgb(123, 170, 183);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: rgb(34, 34, 34);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: calc(100vh - 60px);
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    overflow-y: auto;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  /* Hamburger Animation */
+  .nav-toggle.active .nav-toggle-bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .nav-toggle.active .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .nav-toggle-bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* --- Sub-headings --- */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 19px;
+  color: rgb(13, 8, 8);
+}
+
+/* --- Image on the page --- */
+.main-image {
+  width: 400px;
+  height: 266px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+
+/* --- Hero section on the home page --- */
+.hero {
+  display: flex;          /* image left, intro text right */
+  flex-wrap: wrap;        /* stacks on narrow screens */
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.hero img {
+  width: 248px;
+  height: 398px;
+  object-fit: cover;
+}
+
+.hero .intro-text {
+  flex: 1 1 260px;        /* allow it to shrink on small widths */
+}
+
+/* --- Simple footer --- */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  color: rgb(13, 8, 8);
+}
